@@ -8,9 +8,8 @@ import net.fernandosalas.todo.service.TodoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 @AllArgsConstructor
@@ -26,10 +25,7 @@ public class TodoServiceImplementation implements TodoService {
 
         Todo todo = modelMapper.map(todoDto, Todo.class);
 
-        //Todo JPA entity
         Todo savedTodo = todoRepository.save(todo);
-
-        // Convert saved Todo JPA into TodoDto Object
 
         return modelMapper.map(savedTodo, TodoDto.class);
     }
@@ -47,5 +43,16 @@ public class TodoServiceImplementation implements TodoService {
        return todoList.stream()
                 .map((item)-> modelMapper.map(item,TodoDto.class))
                 .toList();
+    }
+
+    @Override
+    public TodoDto updateTodo(TodoDto todoDto, Long id) {
+       Todo todo = todoRepository.findById(id)
+               .orElseThrow(()-> new ResourceNotFoundException("Todo not found with id: " + id));
+        todo.setTitle(todoDto.getTitle());
+        todo.setDescription(todoDto.getDescription());
+        todo.setCompleted(todoDto.isCompleted());
+       Todo updatedTodo = todoRepository.save(todo);
+       return modelMapper.map(updatedTodo, TodoDto.class);
     }
 }
