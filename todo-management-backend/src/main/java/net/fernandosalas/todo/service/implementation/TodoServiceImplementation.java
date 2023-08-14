@@ -9,6 +9,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @AllArgsConstructor
 public class TodoServiceImplementation implements TodoService {
@@ -36,5 +39,13 @@ public class TodoServiceImplementation implements TodoService {
         Todo todo = todoRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("Todo not found with id: " + id));
         return modelMapper.map(todo, TodoDto.class);
+    }
+
+    @Override
+    public List<TodoDto> getAllTodos() {
+       List<Todo> todoList = todoRepository.findAll();
+       return todoList.stream()
+                .map((item)-> modelMapper.map(item,TodoDto.class))
+                .toList();
     }
 }
