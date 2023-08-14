@@ -2,6 +2,7 @@ package net.fernandosalas.todo.service.implementation;
 import lombok.AllArgsConstructor;
 import net.fernandosalas.todo.dto.TodoDto;
 import net.fernandosalas.todo.entity.Todo;
+import net.fernandosalas.todo.exception.ResourceNotFoundException;
 import net.fernandosalas.todo.repository.TodoRepository;
 import net.fernandosalas.todo.service.TodoService;
 import org.modelmapper.ModelMapper;
@@ -28,5 +29,12 @@ public class TodoServiceImplementation implements TodoService {
         // Convert saved Todo JPA into TodoDto Object
 
         return modelMapper.map(savedTodo, TodoDto.class);
+    }
+
+    @Override
+    public TodoDto getTodo(Long id) {
+        Todo todo = todoRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Todo not found with id: " + id));
+        return modelMapper.map(todo, TodoDto.class);
     }
 }
