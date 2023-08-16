@@ -1,28 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getTodos } from "../services/TodoService";
 
 const ListTodoComponent = () => {
-  const dummyData = [
-    {
-      id: 1,
-      title: "Todo 1",
-      description: "Description 1",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Todo 2",
-      description: "Description 2",
-      completed: false,
-    },
-    {
-      id: 3,
-      title: "Todo 3",
-      description: "Description 3",
-      completed: false,
-    },
-  ];
+  const [todos, setTodos] = useState([]);
 
-  const [todos, setTodos] = useState(dummyData);
+  const fetchTodos = async () => {
+    try {
+      const response = await getTodos();
+      setTodos(response.data);
+    } catch (err) {
+      console.log("Error fetching todos:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
 
   return (
     <div className="container">
