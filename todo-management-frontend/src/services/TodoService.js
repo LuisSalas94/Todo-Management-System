@@ -8,5 +8,5 @@ export const addTodo = (todo) => axios.post(BASE_URL_API_URL, todo);
 
 export const getTodoById = (id) => axios.get(`${BASE_URL_API_URL}/${id}`);
 
-export const updateTodo = (todo) =>
-  axios.put(`${BASE_URL_API_URL}/${todo.id}`, todo);
+export const updateTodo = (id, todo) =>
+  axios.put(`${BASE_URL_API_URL}/${id}`, todo);

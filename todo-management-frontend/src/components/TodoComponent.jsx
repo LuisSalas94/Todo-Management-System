@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { addTodo, getTodoById } from "../services/TodoService";
+import { addTodo, getTodoById, updateTodo } from "../services/TodoService";
 
 const TodoComponent = () => {
   const [title, setTitle] = useState("");
@@ -10,13 +10,28 @@ const TodoComponent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const saveOrUpdateTodo = (e) => {
+  const saveOrUpdateTodo = async (e) => {
     e.preventDefault();
     const todo = { title, description, completed };
-    if (title && description && completed) {
-      addTodo(todo);
-      navigate("/todos");
-      return true;
+
+    if (title && description) {
+      if (id) {
+        try {
+          await updateTodo(id, todo);
+          console.log("Todo updated successfully");
+          navigate("/todos");
+        } catch (error) {
+          console.error("Error updating todo:", error);
+        }
+      } else {
+        try {
+          await addTodo(todo);
+          console.log("Todo added successfully");
+          navigate("/todos");
+        } catch (error) {
+          console.error("Error adding todo:", error);
+        }
+      }
     } else {
       alert("Please fill all the fields");
     }
