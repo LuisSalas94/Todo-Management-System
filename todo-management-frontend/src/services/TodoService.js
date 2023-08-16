@@ -15,3 +15,6 @@ export const deleteTodo = (id) => axios.delete(`${BASE_URL_API_URL}/${id}`);
 
 export const completeTodo = (id) =>
   axios.patch(`${BASE_URL_API_URL}/${id}/complete`);
+
+export const incompleteTodo = (id) =>
+  axios.patch(`${BASE_URL_API_URL}/${id}/incomplete`);

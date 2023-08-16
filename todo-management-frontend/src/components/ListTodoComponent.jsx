@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { completeTodo, deleteTodo, getTodos } from "../services/TodoService";
+import {
+  completeTodo,
+  deleteTodo,
+  getTodos,
+  incompleteTodo,
+} from "../services/TodoService";
 import { useNavigate } from "react-router-dom";
 
 const ListTodoComponent = () => {
@@ -37,6 +42,11 @@ const ListTodoComponent = () => {
     fetchTodos();
   };
 
+  const incompleteTodoMethod = async (id) => {
+    await incompleteTodo(id);
+    fetchTodos();
+  };
+
   return (
     <div className="container">
       <h2 className="text-center mt-3">List of Todos</h2>
@@ -53,6 +63,7 @@ const ListTodoComponent = () => {
               <th>Action #1</th>
               <th>Action #2</th>
               <th>Action #3</th>
+              <th>Action #4</th>
             </tr>
           </thead>
           <tbody>
@@ -83,6 +94,14 @@ const ListTodoComponent = () => {
                     className="btn btn-outline-info btn-sm"
                   >
                     Complete
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => incompleteTodoMethod(todo.id)}
+                    className="btn btn-outline-info btn-sm"
+                  >
+                    In Complete
                   </button>
                 </td>
               </tr>
