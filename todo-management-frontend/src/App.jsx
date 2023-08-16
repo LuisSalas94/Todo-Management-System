@@ -1,13 +1,18 @@
 import "./App.css";
 import HeaderComponent from "./components/HeaderComponent";
-
 import ListTodoComponent from "./components/ListTodoComponent";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <HeaderComponent />
-      <ListTodoComponent />
+      <BrowserRouter>
+        <HeaderComponent />
+        <Routes>
+          <Route path="/" element={<ListTodoComponent />} />
+          <Route path="/todos" element={<ListTodoComponent />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
