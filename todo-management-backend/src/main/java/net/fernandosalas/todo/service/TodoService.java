@@ -1,5 +1,6 @@
 package net.fernandosalas.todo.service;
 
+import net.fernandosalas.todo.dto.RegisterDto;
 import net.fernandosalas.todo.dto.TodoDto;
 
 import java.util.List;
@@ -13,4 +14,7 @@ public interface TodoService {
     TodoDto completeTodo(Long id);
     TodoDto inCompleteTodo(Long id);
 
+    interface AuthService {
+        String register(RegisterDto registerDto);
+    }
 }
