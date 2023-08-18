@@ -1,5 +1,4 @@
 package net.fernandosalas.todo.service.implementation;
-
 import lombok.AllArgsConstructor;
 import net.fernandosalas.todo.dto.RegisterDto;
 import net.fernandosalas.todo.entity.Role;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.HashSet;
 import java.util.Set;
 
