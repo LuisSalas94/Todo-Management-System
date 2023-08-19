@@ -9,7 +9,6 @@ export const loginAPICall = (usernameOrEmail, password) =>
   axios.post(`${AUTH_REST_API_URL}/login`, { usernameOrEmail, password });
 
 /* Implement Basic Auth in React */
-
 export const storeToken = (token) => localStorage.setItem("token", token);
 
 export const getToken = () => localStorage.getItem("token");
@@ -30,4 +29,10 @@ export const isUserLoggedIn = () => {
 export const getLoggedInUser = () => {
   const username = sessionStorage.getItem("authenticatedUser");
   return username;
+};
+
+/* Logout Feature */
+export const logout = () => {
+  localStorage.clear();
+  sessionStorage.clear();
 };
