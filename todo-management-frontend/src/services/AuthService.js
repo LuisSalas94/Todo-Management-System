@@ -13,3 +13,21 @@ export const loginAPICall = (usernameOrEmail, password) =>
 export const storeToken = (token) => localStorage.setItem("token", token);
 
 export const getToken = () => localStorage.getItem("token");
+
+/* Diplay the Links as Per User Auth in the Header */
+export const saveLoggedInUser = (username) =>
+  sessionStorage.setItem("authenticatedUser", username);
+
+export const isUserLoggedIn = () => {
+  const username = sessionStorage.getItem("authenticatedUser");
+  if (username == null) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+export const getLoggedInUser = () => {
+  const username = sessionStorage.getItem("authenticatedUser");
+  return username;
+};
