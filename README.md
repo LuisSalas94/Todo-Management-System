@@ -1,5 +1,6 @@
 
-![Screenshot_8](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/22514fef-ad95-4875-9d76-efe00e9b7db5)
+
+![Screenshot_8](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/c6935c8d-9035-4498-b391-e39f92e28481)
 
 # Todo-Management-System 📚
 
@@ -9,7 +10,8 @@ The To-Do Management System empowers users to seamlessly add, update, and delete
 This system ensures smooth communication between the frontend and backend, delivering a user-friendly interface for efficient 
 student details management. Additionally, it offers user registration and login features, ensuring that only users with the correct roles can perform actions like updating and deleting to-do items.
 
-![260174098-c653dede-2d3b-4301-a074-48a9daf201b9](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/1e6dbe5f-a1fe-46ee-8f2e-f7e6868e3c3a)
+![260174098-c653dede-2d3b-4301-a074-48a9daf201b9](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/32a588d4-e61c-44f1-b93b-73b647bad027)
+
 
 ## Tech Stack 🖥
 
@@ -38,12 +40,12 @@ student details management. Additionally, it offers user registration and login 
 - Cross-Platform Compatibility: The app is designed to work seamlessly across various devices and platforms, including desktop computers, tablets, and mobile phones, providing users with flexibility in how they access and manage their tasks.
 
 ## Screenshots 🎞
+![Screenshot_10](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/90ae2a7a-1abe-4702-a214-e4676c5675c7)
+![Screenshot_14](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/c201cfc3-3138-494f-b7dc-836dba9a38c0)
+![portfolio-11](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/a8516b9b-7bc8-4c57-aed4-4f221e023e8c)
+![Screenshot_12](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/f5141202-4162-46a6-b7af-5d0e3db082ce)
+![Screenshot_13](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/d836d00f-0f4b-4edb-87a3-142d9b86c5ac)
 
-![Screenshot_10](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/19ed7a05-6044-42db-bb94-017716c8ac00)
-![Screenshot_14](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/b4d3fb0f-2477-4faf-ba94-01eda57d5070)
-![Screenshot_11](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/701bcdf1-a57e-4d6f-a9e2-e9df917d9a69)
-![Screenshot_12](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/08ddce56-b779-4045-b094-849e23633a19)
-![Screenshot_13](https://github.com/LuisSalas94/Todo-Management-System/assets/57297709/aab25e11-3dd0-4a7f-b7d6-6f92ac157a4c)
 
 
 ## Instructions 🕶
