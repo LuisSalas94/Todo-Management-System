@@ -1,6 +1,7 @@
 package net.fernandosalas.todo.controller;
 
 import lombok.AllArgsConstructor;
+import net.fernandosalas.todo.dto.JwtAuthResponse;
 import net.fernandosalas.todo.dto.LoginDto;
 import net.fernandosalas.todo.dto.RegisterDto;
 import net.fernandosalas.todo.service.AuthService;
@@ -26,10 +27,16 @@ public class AuthController {
     }
 
     // Login REST API
+//    @PostMapping("/login")
+//    public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
+//        String response = authService.login(loginDto);
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
+
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
-        String response = authService.login(loginDto);
-        return new ResponseEntity<>(response, HttpStatus.OK);
+    public ResponseEntity<JwtAuthResponse> login(@RequestBody LoginDto loginDto) {
+        JwtAuthResponse jwtAuthResponse = authService.login(loginDto);
+         return new ResponseEntity<>(jwtAuthResponse, HttpStatus.OK);
     }
 
 }

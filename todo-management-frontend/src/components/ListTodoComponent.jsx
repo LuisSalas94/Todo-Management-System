@@ -6,9 +6,10 @@ import {
   incompleteTodo,
 } from "../services/TodoService";
 import { useNavigate } from "react-router-dom";
+import useListTodo from "../hooks/useListTodo";
 
 const ListTodoComponent = () => {
-  const [todos, setTodos] = useState([]);
+  /*   const [todos, setTodos] = useState([]);
   const navigate = useNavigate();
 
   const fetchTodos = async () => {
@@ -46,6 +47,16 @@ const ListTodoComponent = () => {
     await incompleteTodo(id);
     fetchTodos();
   };
+ */
+
+  const {
+    todos,
+    addNewTodo,
+    updateTodo,
+    removeTodo,
+    completeTodoMethod,
+    incompleteTodoMethod,
+  } = useListTodo();
 
   return (
     <div className="container">
