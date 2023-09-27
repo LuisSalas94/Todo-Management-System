@@ -17,14 +17,12 @@ const LoginComponent = () => {
     try {
       await loginAPICall(username, password);
       const token = "Basic " + window.btoa(username + ":" + password);
-      console.log("Token: ", token);
       storeToken(token);
       /* Diplay the Links as Per User Auth in the Header */
       saveLoggedInUser(username);
       navigate("/todos");
       /* Diplay the Links as Per User Auth in the Header */
       window.location.reload(false);
-      console.log("Login Successful");
     } catch (error) {
       console.log(error);
     }
